@@ -7,6 +7,7 @@ import org.jpos.iso.ISOPackager;
 import org.jpos.iso.ISORequestListener;
 import org.jpos.iso.ISOServer;
 import org.jpos.iso.ISOSource;
+import org.jpos.iso.channel.ASCIIChannel;
 import org.jpos.iso.packager.ISO87APackager;
 import org.jpos.util.Log4JListener;
 
@@ -18,7 +19,7 @@ public class Penerima {
 	static Integer port = 12345;
 	
 	public static void main(String[] args) throws IOException {
-		CustomChannel channel = new CustomChannel(packager);
+		ASCIIChannel channel = new ASCIIChannel(packager);
 		org.jpos.util.Logger jposLogger = new org.jpos.util.Logger();
 		Log4JListener log4JListener = new Log4JListener();
 		log4JListener.setLevel("info");
